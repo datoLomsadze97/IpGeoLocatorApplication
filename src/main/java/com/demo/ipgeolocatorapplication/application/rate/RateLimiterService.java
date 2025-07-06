@@ -16,7 +16,7 @@ public class RateLimiterService {
     public void acquire() {
         try {
             semaphore.acquire();
-            scheduler.schedule(() -> semaphore.release(), 10, TimeUnit.SECONDS);
+            scheduler.schedule(() -> semaphore.release(), 1, TimeUnit.SECONDS);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }

@@ -1,10 +1,10 @@
 # Ip Geo Locator
 
 ## Overview
-This Spring Boot application provides a REST API for IP geolocation lookup. It integrates external IP geolocation providers, caches results using Redis, and enforces API rate limiting on cache misses.
+Application provides a REST API for IP geolocation lookup. It integrates external IP geolocation providers, caches results using Redis, and enforces API rate limiting on cache misses.
 
 ## Architecture
-- **Hexagonal (Ports & Adapters)** architecture.
+- Hexagonal (Ports & Adapters) architecture.
 - Domain logic is decoupled from external systems using ports and adapters.
 - REST controllers and provider clients are adapters.
 - Service layer orchestrates calls between domain, cache, and rate limiter.
@@ -35,8 +35,8 @@ docker-compose up --build
 ```
 
 ### Docker Compose services
-- `ipgeo-app`: The Spring Boot application (port 8080)
-- `ipgeo-redis`: Redis server (port 6379)
+- `ip-geo-locator-app`: The Spring Boot application (port 8080)
+- `ip-geo-locator-redis`: Redis server (port 6379)
 
 ## API Usage
 - `GET /api/v1/ip-geo-location/{ip}` — Lookup geolocation data for the provided IP address.
